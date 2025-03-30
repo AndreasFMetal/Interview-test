@@ -14,16 +14,32 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #1e2458; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
+}
+.day-col{
+  background-color: #ffffff;
+  color: #1e2458;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 5px;
 }
 
+#searchBox{
+  padding: 5px 20px;
+  margin: 20px;
+}
+
+.daysContainer {
+  display: flex
+;
+}
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +51,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button.searchButton {
+  padding: 5px 20px;
+  border: 0px;
+  border-radius: 2px;
+  margin-left: -20px !important;
+  background: #ff8f00;
+  color: #fff;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.App{
+  background-image: url("./img/background.jpg");
 }
