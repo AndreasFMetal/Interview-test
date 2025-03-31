@@ -16,7 +16,7 @@
 .App-header {
   /* background-color: #1e2458; */
   min-height: 100vh;
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -36,10 +36,6 @@
   margin: 20px;
 }
 
-.daysContainer {
-  display: flex
-;
-}
 .App-link {
   color: #61dafb;
 }
@@ -66,4 +62,35 @@ button.searchButton {
 
 .App{
   background-image: url("./img/background.jpg");
+  background-size: cover;
+}
+
+.headerTitle{
+  padding-top: 20px;
+}
+.locationLabel{
+  padding-bottom: 20px;
+}
+
+/* .bottomContainer {
+  display: flex
+;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+} */
+
+.f20{
+  font-size: 20px;}
+.p20{
+  padding-bottom: 20px;
+}
+.blue{color: #0058ff;}
+.red{color: #ff1e00}
+
+.daysContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
