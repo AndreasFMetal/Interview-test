@@ -6,6 +6,17 @@ import rain from "./img/rain.gif";
 import snow from "./img/snow.gif";
 import storm from "./img/storm.gif";
 
+/* 
+  0 - clear
+1,2,3 - cloudy
+45,48 - fog
+51,53,55,56,57 - drizzle
+61,63,65,66,67,80,81,82 - rain
+71,73,75,77,85,86 - snow
+95,96,99 - storm
+Anything else - clear
+*/
+
 function iconSelector(code) {
   switch (code) {
     case 0:

@@ -13,6 +13,16 @@ function wmoMapping(code) {
   // 85, 86	Snow showers slight and heavy
   // 95 *	Thunderstorm: Slight or moderate
   // 96, 99 *	Thunderstorm with slight and heavy hail
+/* 
+  0 - Clear sky
+1,2,3 - Cloudy
+45,48 - Fog
+51,53,55,56,57 - Drizzle
+61,63,65,66,67,80,81,82 - Rain
+71,73,75,77,85,86 - Snow
+95,96,99 - Thunderstorm
+Anything else - Unknown code
+*/
   switch (code) {
     case 0:
       return "Clear sky";
