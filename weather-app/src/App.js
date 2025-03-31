@@ -189,7 +189,7 @@ function App() {
             </div>
           </div>
           <div className="locationLabel">
-            <div> {locationData.name}</div>
+            <div> {locationData.name} {locationData.country}</div>
           </div>
           {/* <div> {locationData.latitude}</div>
           <div> {locationData.longitude}</div> */}

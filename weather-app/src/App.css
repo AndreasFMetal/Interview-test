@@ -31,9 +31,14 @@
   margin: 5px;
 }
 
-#searchBox{
-  padding: 5px 20px;
+#searchBox {
+  padding: 10px 20px;
   margin: 20px;
+  font-size: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 20px;
 }
 
 .App-link {
@@ -50,14 +55,19 @@
 }
 
 button.searchButton {
-  padding: 5px 20px;
-  border: 0px;
+  padding: 6px 20px 10px 20px;
+  border: solid 2px #000;
   border-radius: 2px;
-  margin-left: -20px !important;
+  margin-left: -23px !important;
   background: #ff8f00;
   color: #fff;
   font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 0px;
+  font-size: 20px;
 }
 
 .App{
