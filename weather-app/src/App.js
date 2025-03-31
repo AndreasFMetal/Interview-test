@@ -1,133 +1,17 @@
 import "./App.css";
 import React, { useState } from "react";
 import axios from "axios";
-import clear from "./img/clear.gif";
-import cloudy from "./img/part-cloudy.gif";
-import fog from "./img/fog.gif";
-import drizzle from "./img/drizzle.gif";
-import rain from "./img/rain.gif";
-import snow from "./img/snow.gif";
-import storm from "./img/storm.gif";
+
+import iconSelector from "./iconSelector";
+import wmoMapping from "./wmoMapping";
 
 function App() {
-  const [data, setData] = useState({});
+  // const [data, setData] = useState({});
   const [dataDaily, setDataDaily] = useState([]);
   const [location, setLocation] = useState("");
   const [locationData, setLocationData] = useState({});
   const urlLocation = `https://geocoding-api.open-meteo.com/v1/search?name=${location}&count=1&language=en&format=json`;
   // const [wmo, setWmo] = useState({})
-
-  function wmoMapping(code) {
-    //   Code	Description
-    // 0	Clear sky
-    // 1, 2, 3	Mainly clear, partly cloudy, and overcast
-    // 45, 48	Fog and depositing rime fog
-    // 51, 53, 55	Drizzle: Light, moderate, and dense intensity
-    // 56, 57	Freezing Drizzle: Light and dense intensity
-    // 61, 63, 65	Rain: Slight, moderate and heavy intensity
-    // 66, 67	Freezing Rain: Light and heavy intensity
-    // 71, 73, 75	Snow fall: Slight, moderate, and heavy intensity
-    // 77	Snow grains
-    // 80, 81, 82	Rain showers: Slight, moderate, and violent
-    // 85, 86	Snow showers slight and heavy
-    // 95 *	Thunderstorm: Slight or moderate
-    // 96, 99 *	Thunderstorm with slight and heavy hail
-    switch (code) {
-      case 0:
-        return "Clear sky";
-        break;
-      case 1:
-      case 2:
-      case 3:
-        return "Cloudy";
-        break;
-      case 45:
-      case 48:
-        return "Fog";
-        break;
-      case 51:
-      case 53:
-      case 55:
-      case 56:
-      case 57:
-        return "Drizzle";
-        break;
-      case 61:
-      case 63:
-      case 65:
-      case 66:
-      case 67:
-      case 80:
-      case 81:
-      case 82:
-        return "Rain";
-        break;
-      case 71:
-      case 73:
-      case 75:
-      case 77:
-      case 85:
-      case 86:
-        return "Snow";
-        break;
-      case 95:
-      case 96:
-      case 99:
-        return "Thunderstorm";
-        break;
-      default:
-        return "Unknown code";
-    }
-  }
-
-  function iconSelector(code) {
-    switch (code) {
-      case 0:
-        return clear;
-        break;
-      case 1:
-      case 2:
-      case 3:
-        return cloudy;
-        break;
-      case 45:
-      case 48:
-        return fog;
-        break;
-      case 51:
-      case 53:
-      case 55:
-      case 56:
-      case 57:
-        return drizzle;
-        break;
-      case 61:
-      case 63:
-      case 65:
-      case 66:
-      case 67:
-      case 80:
-      case 81:
-      case 82:
-        return rain;
-        break;
-      case 71:
-      case 73:
-      case 75:
-      case 77:
-      case 85:
-      case 86:
-        return snow;
-        break;
-      case 95:
-      case 96:
-      case 99:
-        return storm;
-        break;
-      default:
-        return clear;
-    }
-  }
 
   function searchCity() {
     //Find Location
@@ -144,7 +28,8 @@ function App() {
       let perDay = [];
       let index = 0;
       axios.get(urlWeather).then((response) => {
-        if(response){setData(response.data);
+        if(response){
+          // setData(response.data);
         for (index = 0; index < response.data.daily.time.length; index++) {
           if (index < 5) {
             perDay.push({
